@@ -1,0 +1,20 @@
+train:
+  data_object:
+    _target_: src.transforms.LogSTFT
+    n_fft: 1724
+    hop_length: 130
+    win_length: 1724
+    frame_count: 600
+    window_type: blackman
+    center: false
+    random_crop: true
+inference:
+  data_object:
+    _target_: src.transforms.LogSTFT
+    n_fft: 1724
+    hop_length: 130
+    win_length: 1724
+    frame_count: 600
+    window_type: blackman
+    center: false
+    random_crop: false

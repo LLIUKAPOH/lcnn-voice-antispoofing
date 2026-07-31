@@ -1,0 +1,3 @@
+_target_: src.model.LCNN
+n_classes: 2
+dropout: 0.75

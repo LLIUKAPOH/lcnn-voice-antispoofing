@@ -1,0 +1,32 @@
+defaults:
+  - model: lcnn
+  - writer: comet
+  - metrics: binary
+  - datasets: train
+  - dataloader: audio
+  - transforms: stft
+  - _self_
+optimizer:
+  _target_: torch.optim.Adam
+  lr: 3e-4
+  weight_decay: 1e-4
+lr_scheduler:
+  _target_: torch.optim.lr_scheduler.StepLR
+  step_size: 7930
+  gamma: 0.5
+loss_function:
+  _target_: src.loss.CrossEntropyLoss
+  class_weights: [0.83, 2.48]
+  label_smoothing: 0.05
+trainer:
+  log_step: 50
+  n_epochs: 30
+  device_tensors: ["data_object", "labels"]
+  resume_from: null
+  device: auto
+  override: True
+  monitor: "min val_EER"
+  save_period: 1
+  early_stop: 31
+  save_dir: "saved"
+  seed: 1

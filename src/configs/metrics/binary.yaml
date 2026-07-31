@@ -1,0 +1,8 @@
+train:
+  - _target_: src.metrics.BinaryAccuracy
+    name: "accuracy"
+inference:
+  - _target_: src.metrics.BinaryAccuracy
+    name: "accuracy"
+
+

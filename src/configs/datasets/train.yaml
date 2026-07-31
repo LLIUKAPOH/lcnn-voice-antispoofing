@@ -1,0 +1,8 @@
+train:
+  _target_: src.datasets.ASVspoof2019Dataset
+  root_dir: /kaggle/input/datasets/awsaf49/asvpoof-2019-dataset
+  partition: train
+val:
+  _target_: src.datasets.ASVspoof2019Dataset
+  root_dir: /kaggle/input/datasets/awsaf49/asvpoof-2019-dataset
+  partition: dev

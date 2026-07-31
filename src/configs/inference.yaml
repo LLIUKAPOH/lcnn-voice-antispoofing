@@ -1,0 +1,14 @@
+defaults:
+  - model: lcnn
+  - metrics: binary
+  - datasets: eval
+  - dataloader: audio
+  - transforms: stft
+  - _self_
+inferencer:
+  device_tensors: ["data_object", "labels"]
+  device: auto
+  save_dir: "outputs-stc-lcnn-fft1724-b32-crop-softweights"
+  output_file: "mkkondratev.csv"
+  seed: 1
+  from_pretrained: "saved/stc-lcnn-fft1724-b32-crop-softweights/model_best.pth"
